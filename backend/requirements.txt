@@ -1,0 +1,34 @@
+# ============================================================================
+# ATS Resume Analyzer API - Production Dependencies
+# ============================================================================
+# Python Version: 3.8 or higher required
+# 
+# Installation:
+#   pip install -r requirements.txt
+#
+# ============================================================================
+
+# Web Framework
+Flask==3.0.0                    # Flask web framework
+Flask-CORS==4.0.0               # Cross-Origin Resource Sharing support
+werkzeug==3.0.1                 # WSGI utilities (required by Flask)
+
+# Database
+pymongo==4.6.1                  # MongoDB driver for Python
+
+# PDF Processing
+pdfplumber==0.10.3              # PDF text extraction library
+
+# Configuration
+python-dotenv==1.0.0             # Environment variable management (.env file support)
+
+# ============================================================================
+# Automatic Dependencies (installed automatically with packages above):
+# ============================================================================
+# - pdfminer.six (required by pdfplumber for PDF parsing)
+# - pypdfium2 (required by pdfplumber for PDF rendering)
+# - Pillow (required by pdfplumber for image processing)
+# - dnspython (required by pymongo for DNS resolution)
+# - click, itsdangerous, Jinja2, MarkupSafe, blinker (required by Flask)
+# ============================================================================
+
