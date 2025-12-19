@@ -83,10 +83,13 @@ def create_app(config_name='default'):
     
     return app
 
+# Create app instance for gunicorn/production servers
+# This is needed because gunicorn looks for 'app' variable in the module
+env = os.getenv('FLASK_ENV', 'production')
+app = create_app(env)
+
 if __name__ == '__main__':
-    # Determine environment
-    env = os.getenv('FLASK_ENV', 'development')
-    app = create_app(env)
+    # For local development
     port = int(os.getenv('PORT', 5000))
     debug = os.getenv('FLASK_DEBUG', 'False') == 'True' and env == 'development'
     app.run(host='0.0.0.0', port=port, debug=debug)
