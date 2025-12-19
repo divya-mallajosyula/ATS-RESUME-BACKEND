@@ -22,6 +22,9 @@ pdfplumber==0.10.3              # PDF text extraction library
 # Configuration
 python-dotenv==1.0.0             # Environment variable management (.env file support)
 
+# Production Server
+gunicorn==21.2.0                 # WSGI HTTP Server for production
+
 # ============================================================================
 # Automatic Dependencies (installed automatically with packages above):
 # ============================================================================
