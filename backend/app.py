@@ -54,10 +54,15 @@ def create_app(config_name='default'):
             }
         })
     
-    # Health check
+    # Health check (for Render and other platforms)
     @app.route('/health')
+    @app.route('/health/')
     def health():
-        return jsonify({"status": "healthy"}), 200
+        return jsonify({
+            "status": "healthy",
+            "service": "ATS Resume Analyzer API",
+            "version": "1.0.0"
+        }), 200
     
     # Error handlers
     @app.errorhandler(404)
