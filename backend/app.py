@@ -64,6 +64,16 @@ def create_app(config_name='default'):
             "version": "1.0.0"
         }), 200
     
+    # Handle Render's incorrect health check path (workaround)
+    @app.route('/localhost:5000/health')
+    def render_health_workaround():
+        return jsonify({
+            "status": "healthy",
+            "service": "ATS Resume Analyzer API",
+            "version": "1.0.0",
+            "note": "Health check working"
+        }), 200
+    
     # Error handlers
     @app.errorhandler(404)
     def not_found(error):
