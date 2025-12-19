@@ -28,6 +28,7 @@ def create_app(config_name='default'):
                 "http://localhost:3000",
                 "http://localhost:5173",
                 "http://localhost:8081",
+                "https://resumerrs.vercel.app",
                 app.config['FRONTEND_URL']
             ],
             "methods": ["GET", "POST", "DELETE", "OPTIONS"],

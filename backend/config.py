@@ -19,7 +19,7 @@ class Config:
     ALLOWED_EXTENSIONS = {'pdf'}
     
     # CORS
-    FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:8081')
+    FRONTEND_URL = os.getenv('FRONTEND_URL', 'https://resumerrs.vercel.app')
     
     @staticmethod
     def init_app(app):
