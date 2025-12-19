@@ -77,9 +77,18 @@ def create_app(config_name='default'):
     # Error handlers
     @app.errorhandler(404)
     def not_found(error):
+        # Log the requested path for debugging
+        logger.warning(f"404 Error - Requested path: {request.path}")
         return jsonify({
             "success": False,
-            "message": "Endpoint not found"
+            "message": "Endpoint not found",
+            "path": request.path,
+            "available_endpoints": {
+                "health": "/health",
+                "root": "/",
+                "upload": "/api/upload-resume",
+                "analyze": "/api/analyze-match"
+            }
         }), 404
     
     @app.errorhandler(413)
